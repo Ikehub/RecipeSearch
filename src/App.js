@@ -1,15 +1,19 @@
-/* eslint-disable react/no-array-index-key, react-hooks/exhaustive-deps,
- react/jsx-filename-extension */
-
-import './App.css';
-import React from 'react';
+import Meal from './Meal'
 
 function App() {
   return (
-    <div>
-      <p>RecipeSearch</p>
-    </div>
-  );
+    <>
+      <div>
+        <h1 className="font-bold text-4xl lg:text-6xl mt-10">
+          Random meal generator
+        </h1>
+        <div className="underline mx-auto mt-4 mb-5"></div>
+        <Meal />
+      </div>
+    </>
+  )
 }
 
-export default App;
+export default App
+
+
