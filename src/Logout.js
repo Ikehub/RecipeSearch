@@ -14,7 +14,7 @@ function Logout() {
   };
 
   return (
-    <div className="App">
+    <div>
       <GoogleLogout
         clientId={clientId}
         buttonText="Logout"

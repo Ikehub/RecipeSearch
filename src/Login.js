@@ -23,7 +23,7 @@ function Login() {
   };
 
   return (
-    <div className="App">
+    <div>
       <GoogleLogin
         clientId={clientId}
         buttonText="Login with Google"

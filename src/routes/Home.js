@@ -8,8 +8,9 @@ import Logout from '../Logout';
 function Home() {
   const location = useLocation();
   return (
-    <div className="App">
+    <div>
       <p>Welcome, {location.state.name}</p>
+      <img src={location.state.imageUrl} alt="" />
       <Logout />
     </div>
   );

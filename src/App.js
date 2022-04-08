@@ -11,7 +11,9 @@ import Login from './Login';
 function App() {
   return (
     <Router>
-      <div className="App"> RecipeSearch </div>
+      <div>
+        RecipeSearch
+      </div>
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/home" element={<Home />} />
