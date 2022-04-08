@@ -1,14 +1,22 @@
-/* eslint-disable react/no-array-index-key, react-hooks/exhaustive-deps,
- react/jsx-filename-extension */
-
-import './App.css';
 import React from 'react';
+import './App.css';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+} from 'react-router-dom';
+import Home from './routes/Home';
+import Login from './Login';
 
 function App() {
   return (
-    <div>
-      <p>RecipeSearch</p>
-    </div>
+    <Router>
+      <div className="App"> RecipeSearch </div>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/home" element={<Home />} />
+      </Routes>
+    </Router>
   );
 }
 
