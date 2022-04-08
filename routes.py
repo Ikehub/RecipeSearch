@@ -18,13 +18,3 @@ def index():
     # NB: DO NOT add an "index.html" file in your normal templates folder
     # Flask will stop serving this React page correctly
     return flask.render_template("index.html")
-
-
-@routes.route("/login")
-def login():
-    return flask.render_template("login.html")
-
-
-@routes.route("/signup")
-def signup():
-    return flask.render_template("signup.html")
