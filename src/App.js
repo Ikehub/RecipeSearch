@@ -1,15 +1,12 @@
 /* eslint-disable react/no-array-index-key, react-hooks/exhaustive-deps,
  react/jsx-filename-extension */
 
-import './App.css';
-import React from 'react';
+import "./Components/style.css";
+import React from "react";
+import Meal from "./Components/Meal";
 
 function App() {
-  return (
-    <div>
-      <p>RecipeSearch</p>
-    </div>
-  );
+  return <Meal />;
 }
 
 export default App;
