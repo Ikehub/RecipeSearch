@@ -1,5 +1,3 @@
-/* eslint-disable react/jsx-one-expression-per-line */
-
 import '../App.css';
 import '../style.css';
 import React, { useState, useEffect, useRef } from 'react';
@@ -45,7 +43,8 @@ function Home() {
           <h1 style={{
             fontSize: '15px', marginLeft: '15px', marginRight: '15px', fontFamily: 'Arial', fontWeight: '300',
           }}
-          >{recipe.summary}
+          >
+            {recipe.summary}
           </h1>
         </div>
       </div>
@@ -74,7 +73,8 @@ function Home() {
           <h1 style={{
             fontFamily: 'Inter, sans-serif', fontSize: '20px', fontWeight: '300', marginLeft: '8%', marginRight: '8%',
           }}
-          >{recipeOfTheDay.current.summary}
+          >
+            {recipeOfTheDay.current.summary}
           </h1>
         </div>
         <div id="body-2" className="child default">

@@ -1,3 +1,5 @@
+/* eslint-disable react/jsx-boolean-value, no-alert, no-console */
+
 import '../App.css';
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
