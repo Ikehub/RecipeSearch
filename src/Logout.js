@@ -9,8 +9,8 @@ function Logout() {
   const navigate = useNavigate();
   const onSuccess = () => {
     console.log('Logged out successfully');
-    alert('Logged out successfully');
-    navigate('/');
+    sessionStorage.clear();
+    location.reload()
   };
 
   return (
