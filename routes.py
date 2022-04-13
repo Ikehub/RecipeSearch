@@ -1,8 +1,8 @@
 """
 Module contains all routes functionality
 """
-import requests
 import json
+import requests
 import flask
 from models import db, User
 
