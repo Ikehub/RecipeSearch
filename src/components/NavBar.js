@@ -4,7 +4,7 @@
 import '../App.css';
 import React, { useState } from 'react';
 import {
-  Nav, Navbar, NavDropdown, Form, FormControl,
+  Nav, Navbar, Form, FormControl,
 } from 'react-bootstrap';
 import { useNavigate } from 'react-router-dom';
 
@@ -31,8 +31,15 @@ function NavBar() {
           </NavDropdown> */}
         </Nav>
         <Form className="form-inline" method="post" action="/">
-          <FormControl type="search" placeholder="Search for a meal" className="mr-sm-2" name="meal_name"
-            onChange={(e) => setSearch(e.target.value)} value={search} onKeyPress={searchMeal} />
+          <FormControl
+            type="search"
+            placeholder="Search for a meal"
+            className="mr-sm-2"
+            name="meal_name"
+            onChange={(e) => setSearch(e.target.value)}
+            value={search}
+            onKeyPress={searchMeal}
+          />
         </Form>
       </Navbar.Collapse>
     </Navbar>

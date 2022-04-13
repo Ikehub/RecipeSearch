@@ -4,9 +4,9 @@ import { useParams } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 
 function Meal() {
-  let mealName = useParams();
-  const postUrl = '/search'
-  const body = { "meal_name": mealName.name }
+  const mealName = useParams();
+  const postUrl = '/search';
+  const body = { meal_name: mealName.name };
   const [meal, setMeal] = useState();
 
   useEffect(() => {
@@ -19,8 +19,8 @@ function Meal() {
     })
       .then((response) => response.json())
       .then((data) => {
-        setMeal(data)
-        console.log(data)
+        setMeal(data);
+        console.log(meal);
       });
   }, []);
 

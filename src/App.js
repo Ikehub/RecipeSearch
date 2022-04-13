@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import {
   BrowserRouter as Router,
@@ -16,16 +16,15 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path='/' element={<ProtectedRoutes />}>
-          <Route path='/' element={<Navigate replace to="home" />} />
-          <Route path='home' element={<Home />} />
+        <Route path="/" element={<ProtectedRoutes />}>
+          <Route path="/" element={<Navigate replace to="home" />} />
+          <Route path="home" element={<Home />} />
           <Route path="meal/:name" element={<Meal />} />
         </Route>
 
-        <Route path='login' element={<PublicRoutes />}>
-          <Route path='/login' element={<Login />} />
+        <Route path="login" element={<PublicRoutes />}>
+          <Route path="/login" element={<Login />} />
         </Route>
-
 
       </Routes>
     </Router>

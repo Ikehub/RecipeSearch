@@ -36,9 +36,9 @@ function Login() {
     console.log('Login Success: currentUser:', res.profileObj);
     verifyUser(res.profileObj);
     refreshTokenSetup(res);
-    sessionStorage.setItem("loggedIn", true)
-    sessionStorage.setItem("name", res.profileObj.name)
-    sessionStorage.setItem("imageUrl", res.profileObj.imageUrl)
+    sessionStorage.setItem('loggedIn', true);
+    sessionStorage.setItem('name', res.profileObj.name);
+    sessionStorage.setItem('imageUrl', res.profileObj.imageUrl);
 
     navigate('/home');
   };
