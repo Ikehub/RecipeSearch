@@ -1,16 +1,14 @@
 /* eslint-disable no-console, no-alert */
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
 import { GoogleLogout } from 'react-google-login';
 
 const clientId = process.env.REACT_APP_CLIENT_ID;
 
 function Logout() {
-  const navigate = useNavigate();
   const onSuccess = () => {
     console.log('Logged out successfully');
-    alert('Logged out successfully');
-    navigate('/');
+    sessionStorage.clear();
+    window.location.reload();
   };
 
   return (

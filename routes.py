@@ -2,10 +2,11 @@
 Module contains all routes functionality
 """
 import json
+import requests
 import flask
 from models import db, User
 
-# pylint: disable=missing-function-docstring, no-member
+# pylint: disable=missing-function-docstring, no-member, unused-argument
 
 routes = flask.Blueprint("routes", __name__)
 bp = flask.Blueprint(
@@ -13,10 +14,12 @@ bp = flask.Blueprint(
     __name__,
     template_folder="./static/react",
 )
+MEAL_DB_ENDPOINT = "https://www.themealdb.com/api/json/v1/1"
 
 # route for serving React page
-@bp.route("/")
-def index():
+@bp.route("/", methods=["GET"], defaults={"path": ""})
+@bp.route("/<path:path>", methods=["GET"])
+def index(path):
     # NB: DO NOT add an "index.html" file in your normal templates folder
     # Flask will stop serving this React page correctly
     return flask.render_template("index.html")
@@ -36,3 +39,17 @@ def login():
         db.session.add(new_user)
         db.session.commit()
     return flask.jsonify({"msg": "success"})
+
+
+@routes.route("/search", methods=["POST"])
+def search():
+    data = json.loads(flask.request.data)
+    meal_name = data["meal_name"]
+
+    url = f"{MEAL_DB_ENDPOINT}/search.php"
+    parameters = {"s": meal_name}
+
+    request = requests.get(url=url, params=parameters)
+    response = request.json()
+
+    return flask.jsonify(response["meals"])

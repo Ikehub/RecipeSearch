@@ -35,9 +35,12 @@ function Login() {
   const onSuccess = (res) => {
     console.log('Login Success: currentUser:', res.profileObj);
     verifyUser(res.profileObj);
-    alert(`Logged in successfully welcome ${res.profileObj.name}.`);
     refreshTokenSetup(res);
-    navigate('/home', { state: res.profileObj });
+    sessionStorage.setItem('loggedIn', true);
+    sessionStorage.setItem('name', res.profileObj.name);
+    sessionStorage.setItem('imageUrl', res.profileObj.imageUrl);
+
+    navigate('/home');
   };
 
   const onFailure = (res) => {
