@@ -53,3 +53,13 @@ def search():
     response = request.json()
 
     return flask.jsonify(response["meals"])
+
+
+@routes.route("/random", methods=["POST"])
+def random():
+    url = f"{MEAL_DB_ENDPOINT}/random.php"
+
+    request = requests.get(url=url)
+    response = request.json()
+
+    return flask.jsonify(response["meals"])
