@@ -12,9 +12,15 @@
   border-radius: 8px;
 }
 
+body {
+  background-color: #95c2de;
+}
+
 .mainbody {
   background-color: #95c2de;
 }
+
+/*Search styling*/
 
 .searchbody {
   background-color: #95c2de;
@@ -153,4 +159,44 @@ div.card.v4.tight div.details div.overview p {
   text-overflow: ellipsis;
   overflow: hidden;
   margin: 0;
+}
+
+/*Meal Styling*/
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 50px;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.info h2 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  text-align: center;
+  display: block;
+}
+
+.youtube_link h3 {
+  font-style: italic;
+  font-size: 1.1em;
+  font-weight: 400;
+  text-align: center;
+  display: block;
+}
+
+.poster {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.poster {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: 0.5s ease;
+  border-radius: 25px;
+  opacity: 1;
+  backface-visibility: hidden;
+  max-width: 350px;
 }

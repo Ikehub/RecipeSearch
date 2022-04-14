@@ -99,7 +99,6 @@ function Home() {
           <h1 id="user-hello-text">Signed in as</h1>
           <h1 id="username">{username.current}</h1>
           <img src={imageUrl} alt="" />
-          <Logout />
           <div id="user-hello" className="child default">
             <h1>your favorites</h1>
             <h1 style={{ fontFamily: 'Jost, sans-serif', fontWeight: '300', fontSize: '20px' }}>you have no favorites :(</h1>

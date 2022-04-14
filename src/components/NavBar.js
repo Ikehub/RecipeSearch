@@ -6,9 +6,11 @@ import React, { useState } from 'react';
 import {
   Nav, Navbar, Form, FormControl,
 } from 'react-bootstrap';
+import Logout from '../Logout';
 
 function NavBar() {
   const [search, setSearch] = useState('');
+  const name = sessionStorage.getItem('name');
 
   const searchMeal = (evt) => {
     if (evt.key === 'Enter') {
@@ -22,11 +24,12 @@ function NavBar() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          {/* <Nav.Link href="/">Home</Nav.Link>
-          <NavDropdown title={username} id="basic-nav-dropdown">
+          <Nav.Link href="">Meal Prep Calendar</Nav.Link>
+          {/* <NavDropdown title={name} id="basic-nav-dropdown">
             <NavDropdown.Item href="/reviews">All Reviews</NavDropdown.Item>
             <NavDropdown.Item href="/logout">Logout</NavDropdown.Item>
           </NavDropdown> */}
+          <Logout />
         </Nav>
         <Form id='search-form' className="form-inline" method="get" action="/search">
           <FormControl
