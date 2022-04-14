@@ -11,6 +11,7 @@ import Meal from './routes/Meal';
 import Login from './Login';
 import ProtectedRoutes from './routes/ProtectedRoutes';
 import PublicRoutes from './routes/PublicRoutes';
+import Search from './routes/Search';
 
 function App() {
   return (
@@ -19,7 +20,8 @@ function App() {
         <Route path="/" element={<ProtectedRoutes />}>
           <Route path="/" element={<Navigate replace to="home" />} />
           <Route path="home" element={<Home />} />
-          <Route path="meal/:name" element={<Meal />} />
+          <Route path="search" element={<Search />} />
+          <Route path="meal/:id" element={<Meal />} />
         </Route>
 
         <Route path="login" element={<PublicRoutes />}>

@@ -6,15 +6,13 @@ import React, { useState } from 'react';
 import {
   Nav, Navbar, Form, FormControl,
 } from 'react-bootstrap';
-import { useNavigate } from 'react-router-dom';
 
 function NavBar() {
   const [search, setSearch] = useState('');
-  const navigate = useNavigate();
 
   const searchMeal = (evt) => {
     if (evt.key === 'Enter') {
-      navigate(`/meal/${search}`);
+      document.getElementById('search-form').submit();
     }
   };
 
@@ -30,12 +28,12 @@ function NavBar() {
             <NavDropdown.Item href="/logout">Logout</NavDropdown.Item>
           </NavDropdown> */}
         </Nav>
-        <Form className="form-inline" method="post" action="/">
+        <Form id='search-form' className="form-inline" method="get" action="/search">
           <FormControl
             type="search"
             placeholder="Search for a meal"
             className="mr-sm-2"
-            name="meal_name"
+            name="q"
             onChange={(e) => setSearch(e.target.value)}
             value={search}
             onKeyPress={searchMeal}

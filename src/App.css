@@ -12,6 +12,145 @@
   border-radius: 8px;
 }
 
-body {
+.mainbody {
   background-color: #95c2de;
+}
+
+.searchbody {
+  background-color: #95c2de;
+  box-sizing: border-box;
+  max-width: 800px;
+  margin: auto;
+  margin-top: 20px;
+}
+
+section.panel:last-of-type {
+  padding-bottom: 0;
+}
+
+section.panel:first-of-type {
+  border-top: none;
+  padding-top: 0;
+}
+
+section.panel {
+  width: 100%;
+  display: block;
+  padding: 30px 0;
+  ;
+}
+
+div.results.flex.results {
+  align-items: flex-start;
+  align-content: flex-start;
+  justify-content: flex-start;
+}
+
+div.results.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+div.card.v4.tight:first-of-type {
+  margin-top: 0;
+}
+
+div.card.v4.tight {
+  flex-wrap: wrap;
+}
+
+div.card.v4.tight {
+  flex-wrap: wrap;
+}
+
+div.card.v4 {
+  width: 100%;
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.card {
+  box-shadow: 0 2px 8px rgb(0 0 0 / 10%);
+  border: 1px solid rgba(227, 227, 227, 1);
+  background-color: #fff;
+}
+
+div.card.v4+div.card {
+  margin-top: 20px;
+}
+
+div.card.v4.tight>div.wrapper {
+  display: flex;
+  max-width: calc(100vw - 82px);
+}
+
+div.card.v4.tight div.image {
+  min-width: 94px;
+  width: 94px;
+  height: 141px;
+}
+
+div.card.v4 div.image {
+  width: calc(200px / 1.5);
+  min-width: calc(200px / 1.5);
+  height: 200px;
+  box-sizing: border-box;
+}
+
+div.card.v4.tight div.image div.poster {
+  width: 100%;
+  height: 100%;
+}
+
+div.card.v4 div.image div.poster {
+  width: 100%;
+  height: 100%;
+}
+
+div.card.v4.tight div.image a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+div.card.v4.tight div.image img {
+  min-width: 100%;
+  width: 100%;
+  height: 100%;
+}
+
+div.card.v4 div.details {
+  width: 100%;
+  padding: 10px 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+}
+
+div.card.v4 div.details div.wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+div.card.v4.tight div.details div.overview {
+  height: auto;
+}
+
+div.card.v4 div.details div.overview {
+  margin-top: 20px;
+}
+
+div.card.v4.tight div.details div.overview p {
+  font-size: 1em;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin: 0;
 }

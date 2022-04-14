@@ -41,7 +41,7 @@ def login():
     return flask.jsonify({"msg": "success"})
 
 
-@routes.route("/search", methods=["POST"])
+@routes.route("/searchMeal", methods=["POST"])
 def search():
     data = json.loads(flask.request.data)
     meal_name = data["meal_name"]
