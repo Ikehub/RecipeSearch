@@ -41,7 +41,7 @@ def login():
     return flask.jsonify({"msg": "success"})
 
 
-@routes.route("/search", methods=["POST"])
+@routes.route("/searchMeal", methods=["POST"])
 def search():
     data = json.loads(flask.request.data)
     meal_name = data["meal_name"]
@@ -50,6 +50,30 @@ def search():
     parameters = {"s": meal_name}
 
     request = requests.get(url=url, params=parameters)
+    response = request.json()
+
+    return flask.jsonify(response["meals"])
+
+
+@routes.route("/searchById", methods=["POST"])
+def search_by_id():
+    data = json.loads(flask.request.data)
+    meal_id = data["meal_id"]
+
+    url = f"{MEAL_DB_ENDPOINT}/lookup.php"
+    parameters = {"i": meal_id}
+
+    request = requests.get(url=url, params=parameters)
+    response = request.json()
+
+    return flask.jsonify(response["meals"])
+
+
+@routes.route("/random", methods=["POST"])
+def random():
+    url = f"{MEAL_DB_ENDPOINT}/random.php"
+
+    request = requests.get(url=url)
     response = request.json()
 
     return flask.jsonify(response["meals"])

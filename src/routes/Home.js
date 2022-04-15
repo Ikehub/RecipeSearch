@@ -1,16 +1,16 @@
+/* eslint-disable react/jsx-boolean-value, no-alert, no-console */
 import '../App.css';
 import '../style.css';
 import React, { useState, useEffect, useRef } from 'react';
 import chicken from '../stuff/chicken.jpg';
 import beef from '../stuff/beef.jpg';
 import potatoes from '../stuff/potatoes.jpg';
-import soup from '../stuff/soup.jpg';
-import Logout from '../Logout';
 import NavBar from '../components/NavBar';
 
 function Home() {
   const name = sessionStorage.getItem('name');
   const imageUrl = sessionStorage.getItem('imageUrl');
+  const postUrl = '/random';
 
   const recentlyViewedDefault = [
     {
@@ -29,10 +29,22 @@ function Home() {
       image: potatoes,
     },
   ];
-  const randomRecipe = { title: 'Potato Soup', summary: 'Potato soup is made from potatoes with originated in Peru, 7000 years ago. Today, this vegetable is one of the popular vegetables in every cuisine and is used for normal day to day food preparations.', image: soup };
+  const [randomMeal, setRandomMeal] = useState({});
   const [recentlyViewed, setRecentlyViewed] = useState(null);
-  const recipeOfTheDay = useRef(randomRecipe);
   const username = useRef(name);
+  useEffect(() => {
+    fetch(postUrl, {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    })
+      .then((response) => response.json())
+      .then((meals) => {
+        setRandomMeal(meals[0]);
+        console.log(meals[0]);
+      });
+  }, []);
 
   function rvDiv(recipe) {
     return (
@@ -65,16 +77,16 @@ function Home() {
           }}
           />
           <h1 id="recipe_of_day" className="">Recipe of the Day</h1>
-          <h1 style={{ fontFamily: 'Inter, sans-serif', fontSize: '30px', fontWeight: '400' }}>{recipeOfTheDay.current.title}</h1>
+          <h1 style={{ fontFamily: 'Inter, sans-serif', fontSize: '30px', fontWeight: '400' }}>{randomMeal.strMeal}</h1>
           <div id="image_recipe_of_day" className="">
-            <img alt="recipe of the day" src={recipeOfTheDay.current.image} style={{ width: '100%', height: '100%', borderRadius: '2px' }} />
+            <img alt="recipe of the day" src={randomMeal.strMealThumb} style={{ width: '100%', height: '100%', borderRadius: '2px' }} />
           </div>
           <button id="favorites" type="button">ADD TO FAVORITES</button>
           <h1 style={{
             fontFamily: 'Inter, sans-serif', fontSize: '20px', fontWeight: '300', marginLeft: '8%', marginRight: '8%',
           }}
           >
-            {recipeOfTheDay.current.summary}
+            {randomMeal.strInstructions}
           </h1>
         </div>
         <div id="body-2" className="child default">
@@ -85,7 +97,6 @@ function Home() {
           <h1 id="user-hello-text">Signed in as</h1>
           <h1 id="username">{username.current}</h1>
           <img src={imageUrl} alt="" />
-          <Logout />
           <div id="user-hello" className="child default">
             <h1>your favorites</h1>
             <h1 style={{ fontFamily: 'Jost, sans-serif', fontWeight: '300', fontSize: '20px' }}>you have no favorites :(</h1>
