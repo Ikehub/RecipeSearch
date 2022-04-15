@@ -30,22 +30,22 @@ function Meal() {
   return (
     <>
       <NavBar />
-      <div className='grid-container'>
+      <div className="grid-container">
         <div>
-          <div className='info'>
+          <div className="info">
             <h2>{meal.strMeal}</h2>
           </div>
 
-          <div className='meal_image'>
-            <img className='poster' src={meal.strMealThumb} width={350} height={400} />
+          <div className="meal_image">
+            <img className="poster" src={meal.strMealThumb} width={350} height={400} alt="Recipe Thumbnail" />
           </div>
 
-          <div className='meal_details'>
+          <div className="meal_details">
             <p>{meal.strInstructions}</p>
           </div>
 
-          <div className='youtube_link'>
-            <a href={meal.strYoutube} target="_blank"><h3>Video Tutorial</h3></a>
+          <div className="youtube_link">
+            <a href={meal.strYoutube} target="_blank" rel="noreferrer"><h3>Video Tutorial</h3></a>
           </div>
         </div>
       </div>

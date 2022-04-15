@@ -1,16 +1,17 @@
-import React from "react";
+import React from 'react';
 import '../App.css';
+import PropTypes from 'prop-types';
 
 function MealCard(props) {
-  const { meal } = props
-  const url = `/meal/${meal.idMeal}`
+  const { meal } = props;
+  const url = `/meal/${meal.idMeal}`;
   return (
     <div className="card v4 tight">
       <div className="wrapper">
         <div className="image">
           <div className="poster">
             <a className="result" href={url}>
-              <img loading="lazy" className="poster" src={`${meal.strMealThumb}/preview`} />
+              <img loading="lazy" className="poster" src={`${meal.strMealThumb}/preview`} alt="Recipe Thumbnail" />
             </a>
           </div>
         </div>
@@ -32,5 +33,8 @@ function MealCard(props) {
     </div>
   );
 }
+MealCard.propTypes = {
+  meal: PropTypes.shape.isRequired,
+};
 
 export default MealCard;

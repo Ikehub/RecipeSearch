@@ -4,15 +4,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import chicken from '../stuff/chicken.jpg';
 import beef from '../stuff/beef.jpg';
 import potatoes from '../stuff/potatoes.jpg';
-import soup from '../stuff/soup.jpg';
-import Logout from '../Logout';
 import NavBar from '../components/NavBar';
 
 function Home() {
   const name = sessionStorage.getItem('name');
   const imageUrl = sessionStorage.getItem('imageUrl');
-  const postUrl = "/random"
-
+  const postUrl = '/random';
 
   const recentlyViewedDefault = [
     {

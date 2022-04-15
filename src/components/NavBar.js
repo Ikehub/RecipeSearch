@@ -10,7 +10,6 @@ import Logout from '../Logout';
 
 function NavBar() {
   const [search, setSearch] = useState('');
-  const name = sessionStorage.getItem('name');
 
   const searchMeal = (evt) => {
     if (evt.key === 'Enter') {
@@ -31,7 +30,7 @@ function NavBar() {
           </NavDropdown> */}
           <Logout />
         </Nav>
-        <Form id='search-form' className="form-inline" method="get" action="/search">
+        <Form id="search-form" className="form-inline" method="get" action="/search">
           <FormControl
             type="search"
             placeholder="Search for a meal"

@@ -2,13 +2,13 @@
 
 import '../App.css';
 import React, { useEffect, useState } from 'react';
-import { useParams, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import MealCard from '../components/MealCard';
 
 function Meal() {
-  const [searchParams, setSearchParams] = useSearchParams();
-  const mealName = searchParams.get("q");
+  const [searchParams, setSearchParams] = useSearchParams(); // eslint-disable-line no-unused-vars
+  const mealName = searchParams.get('q');
   const postUrl = '/searchMeal';
   const body = { meal_name: mealName };
   const [meals, setMeals] = useState([]);
@@ -28,7 +28,7 @@ function Meal() {
       });
   }, []);
 
-  function renderMealCard(meal, index) {
+  function renderMealCard(meal) {
     return (
       <MealCard
         meal={meal}
@@ -39,12 +39,21 @@ function Meal() {
   return (
     <div className="mainbody">
       <NavBar />
-      <div className='searchbody'>
+      <div className="searchbody">
         <section className="panel">
           <div className="search_results_meal">
-            {meals.map((meal, index) => (
-              renderMealCard(meal, index)
-            ))}
+            {
+              (meals === null)
+                ? (
+                  <h1>
+                    No results for
+                    {mealName}
+                  </h1>
+                )
+                : meals.map((meal, index) => (
+                  renderMealCard(meal, index)
+                ))
+            }
           </div>
         </section>
       </div>

@@ -17,3 +17,12 @@ class User(db.Model):
 
     def __repr__(self) -> str:
         return "<User %r>" % self.username
+
+
+class RecentlyViewed(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    meal_id = db.Column(db.Integer, nullable=False)
+    user_id = db.Column(db.Integer, nullable=False)
+
+    def __repr__(self) -> str:
+        return "<Recently Viewed %r>" % self.meal_id
