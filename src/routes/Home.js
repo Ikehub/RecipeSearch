@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-boolean-value, no-alert, no-console */
 import '../App.css';
 import '../style.css';
 import React, { useState, useEffect, useRef } from 'react';

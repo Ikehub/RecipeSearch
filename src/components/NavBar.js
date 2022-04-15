@@ -1,5 +1,4 @@
-/* eslint-disable react/no-array-index-key, react-hooks/exhaustive-deps,
- react/jsx-filename-extension, no-console */
+/* eslint-disable react/no-array-index-key, react/jsx-filename-extension, no-console */
 
 import '../App.css';
 import React, { useState } from 'react';
