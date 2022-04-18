@@ -55,6 +55,20 @@ def search():
     return flask.jsonify(response["meals"])
 
 
+@routes.route("/searchIngredients", methods=["POST"])
+def search_by_ingredient():
+    data = json.loads(flask.request.data)
+    ingredient = data["ingredient"]
+
+    url = f"{MEAL_DB_ENDPOINT}/filter.php"
+    parameters = {"i": ingredient}
+
+    request = requests.get(url=url, params=parameters)
+    response = request.json()
+
+    return flask.jsonify(response["meals"])
+
+
 @routes.route("/searchById", methods=["POST"])
 def search_by_id():
     data = json.loads(flask.request.data)

@@ -105,12 +105,12 @@ div.card.v4 div.image {
   box-sizing: border-box;
 }
 
-div.card.v4.tight div.image div.poster {
+div.card.v4.tight div.image div.posterThumb {
   width: 100%;
   height: 100%;
 }
 
-div.card.v4 div.image div.poster {
+div.card.v4 div.image div.posterThumb {
   width: 100%;
   height: 100%;
 }
@@ -159,6 +159,146 @@ div.card.v4.tight div.details div.overview p {
   text-overflow: ellipsis;
   overflow: hidden;
   margin: 0;
+}
+
+div.reverse div.white_column {
+  padding-right: 0;
+  padding-left: 30px;
+}
+
+div.white_column {
+  width: calc(100vw - 80px - 268px);
+  max-width: calc(1400px - 80px - 268px);
+  display: flex;
+  flex-wrap: wrap;
+  flex: 0 1 auto;
+  padding-right: 30px;
+}
+
+div.column_wrapper {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  justify-content: center;
+  align-content: flex-start;
+}
+
+div.column_wrapper div.content_wrapper {
+  max-width: 1400px;
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  align-content: flex-start;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+div.reverse div.grey_column {
+  padding-left: 0;
+  padding-right: 0;
+  justify-content: flex-end;
+}
+
+div.grey_column {
+  min-width: 260px;
+  width: 260px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+div.column_wrapper div.settings_panel.no_margin {
+  margin: 0;
+}
+
+div.column_wrapper div.settings_panel {
+  display: block;
+  box-sizing: border-box;
+  min-width: 260px;
+  width: 260px;
+  border: 1px solid rgba(227, 227, 227, 1);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+div.column_wrapper div.settings_panel h3,
+div.column_wrapper div.error_panel h3 {
+  display: flex;
+  align-items: center;
+  align-content: center;
+  justify-content: space-between;
+  margin: 0;
+  font-weight: 600;
+  padding: 20px;
+  color: #fff;
+}
+
+.background_color.light_blue {
+  background-color: #678798
+}
+
+div.column_wrapper ul.panel {
+  box-sizing: border-box;
+  padding: 8px 0;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.no_margin {
+  margin: 0 !important;
+}
+
+div.column_wrapper ul.panel.with_counts li {
+  display: inline-flex;
+  justify-content: space-between;
+}
+
+div.column_wrapper ul.panel.with_counts li.selected {
+  background: rgba(0, 0, 0, .08);
+}
+
+div.column_wrapper ul.panel.with_counts li.selected button {
+  font-weight: 600;
+}
+
+div.column_wrapper ul.panel li {
+  width: 100%;
+  padding: 10px 20px;
+  font-size: 1em;
+  line-height: 1.4em;
+  margin: 0;
+}
+
+div.column_wrapper ul.panel.with_counts li button {
+  color: #000;
+  text-decoration: none;
+  font-weight: normal;
+  background: transparent;
+}
+
+.link-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  display: inline;
+  margin: 0;
+  padding: 0;
+}
+
+div.column_wrapper ul.panel.with_counts li span {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.8em;
+  font-weight: 300;
+  font-family: 'Roboto Mono', monospace;
+  background-color: rgba(0, 0, 0, .08);
+  padding: 0px 10px;
+  border-radius: 8px;
 }
 
 /*Meal Styling*/

@@ -9,9 +9,9 @@ function MealCard(props) {
     <div className="card v4 tight">
       <div className="wrapper">
         <div className="image">
-          <div className="poster">
+          <div className="posterThumb">
             <a className="result" href={url}>
-              <img loading="lazy" className="poster" src={`${meal.strMealThumb}/preview`} alt="Recipe Thumbnail" />
+              <img loading="lazy" className="posterThumb" src={`${meal.strMealThumb}/preview`} alt="Recipe Thumbnail" />
             </a>
           </div>
         </div>
