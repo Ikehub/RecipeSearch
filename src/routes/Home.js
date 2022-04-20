@@ -29,9 +29,12 @@ function Home() {
       image: potatoes,
     },
   ];
+
+  const favoritesDefault = [{"title": "Chicken Parmigiana"}, {"title": "Beef Stroganoff"}, {"title": "Mashed Potatoes"}, {"title": "Butternut Squash Soup"}];
   const [randomMeal, setRandomMeal] = useState({});
   const [recentlyViewed, setRecentlyViewed] = useState(null);
   const username = useRef(name);
+  const [favoriteRecipes, setFavoriteRecipes] = useState(null);
   useEffect(() => {
     fetch(postUrl, {
       method: 'POST',
@@ -63,8 +66,17 @@ function Home() {
     );
   }
 
+  function fav_div(recipe){
+    return (
+    <div id="favorites_div" class="">
+      <h1 id="favorite_recipe_title" style={{fontSize: "16px"}}>{recipe["title"]}</h1>
+    </div>
+    )
+  }
+
   useEffect(() => {
     setRecentlyViewed(recentlyViewedDefault.map(rvDiv));
+    setFavoriteRecipes(favoritesDefault.map(fav_div));
   }, []);
 
   return (
@@ -98,8 +110,14 @@ function Home() {
           <h1 id="username">{username.current}</h1>
           <img src={imageUrl} alt="" />
           <div id="user-hello" className="child default">
-            <h1>your favorites</h1>
-            <h1 style={{ fontFamily: 'Jost, sans-serif', fontWeight: '300', fontSize: '20px' }}>you have no favorites :(</h1>
+          <h1 style={{fontFamily: "Lora, serif"}}>Favorites</h1>
+            {(() => {
+              if (favoriteRecipes == null) {
+                return (<h1 style={{fontFamily: "Jost, sans-serif", fontWeight: "300", fontSize: "20px"}}>Search for recipes to add them.</h1>)
+              } else {
+                return favoriteRecipes
+              }
+            })()}
           </div>
         </div>
       </div>
