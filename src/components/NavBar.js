@@ -18,7 +18,7 @@ function NavBar() {
 
   return (
     <Navbar bg="dark" variant="dark" expand="lg" sticky="top" className="justify-content-between">
-      <Navbar.Brand href="/home">Recipe Search</Navbar.Brand>
+      <Navbar.Brand href="/home">OnlyPans</Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">

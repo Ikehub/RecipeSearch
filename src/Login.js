@@ -49,18 +49,16 @@ function Login() {
   };
 
   return (
-    <div className="signup-center">
-      <div className="signup">
-        <GoogleLogin
-          clientId={clientId}
-          buttonText="Continue with Google"
-          onSuccess={onSuccess}
-          onFailure={onFailure}
-          cookiePolicy="single_host_origin"
-          style={{ marginTop: '100px' }}
-          isSignedIn={true}
-        />
-      </div>
+    <div>
+      <GoogleLogin
+        clientId={clientId}
+        buttonText="Login with Google"
+        onSuccess={onSuccess}
+        onFailure={onFailure}
+        cookiePolicy="single_host_origin"
+        style={{ marginTop: '100px' }}
+        isSignedIn={true}
+      />
     </div>
   );
 }

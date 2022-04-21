@@ -1,29 +1,16 @@
-.signup-center {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 450px;
-  width: 100%;
-}
-
-.signup {
-  padding: 20px;
-  border-radius: 8px;
-}
-
 body {
-  background-color: #95c2de;
+  background-color: #bbdef4;
+  overflow-x: hidden;
 }
 
 .mainbody {
-  background-color: #95c2de;
+  background-color: #bbdef4;
 }
 
 /*Search styling*/
 
 .searchbody {
-  background-color: #95c2de;
+  background-color: #bbdef4;
   box-sizing: border-box;
   max-width: 800px;
   margin: auto;
@@ -339,4 +326,45 @@ div.column_wrapper ul.panel.with_counts li span {
   opacity: 1;
   backface-visibility: hidden;
   max-width: 350px;
+}
+
+/*Landing Styling*/
+
+.landingcontainer {
+  text-align: center;
+  display: grid;
+  grid-template-rows: 2fr, 1fr, 1fr, 1fr;
+  width: 100vw;
+  height: 100vh;
+  font-size: 20px;
+}
+
+.landingcontainer2 {
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 10px;
+}
+
+.containerimage {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.landingcontainer>div:nth-child(2n) {
+  background-color: #83cfff;
+}
+
+.landing1 {
+  height: 500px;
+  font-size: 30px;
+  background-image: url(../src/stuff/recipeLanding.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 70%;
+}
+
+.landing1items {
+  margin-top: 110px;
 }
