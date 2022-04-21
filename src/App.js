@@ -8,7 +8,7 @@ import {
 } from 'react-router-dom';
 import Home from './routes/Home';
 import Meal from './routes/Meal';
-import Login from './Login';
+import Landing from './routes/Landing';
 import ProtectedRoutes from './routes/ProtectedRoutes';
 import PublicRoutes from './routes/PublicRoutes';
 import Search from './routes/Search';
@@ -24,8 +24,8 @@ function App() {
           <Route path="meal/:id" element={<Meal />} />
         </Route>
 
-        <Route path="login" element={<PublicRoutes />}>
-          <Route path="/login" element={<Login />} />
+        <Route path="landing" element={<PublicRoutes />}>
+          <Route path="/landing" element={<Landing />} />
         </Route>
 
       </Routes>
