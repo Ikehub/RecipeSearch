@@ -1,19 +1,34 @@
 import React from 'react'
 
 function App() {
-    function submitReview(e){
+    function submitReview(comment, rating){
+        let formData = new FormData();
+        formData.append("comment", JSON.stringify(comment));
+        formData.append("rating", JSON.stringify(rating));
+
+        /* add fetch information here */
+        fetch("", {method: "POST", body: formData})
+        .then((response) => response.json())
+        .then((data) => {
+          if (data["success"] === true){
+            /* console.log("successful"); */
+          } else {
+            /* console.log("error: unsuccessful"); */
+          }
+        });
+    }
+    function getReview(e){
         e.preventDefault();
 
         let comment = e.target.comment.value;
         let rating = e.target.rating.value;
 
-        console.log(comment);
-        console.log(rating);
+        submitReview(comment, rating);
     }
     return (
         <div>
             <h1>Review a Recipe</h1>
-            <form onSubmit={submitReview}>
+            <form onSubmit={getReview}>
                 <textarea placeholder="Write a review" rows="10" cols="25" name="comment"></textarea>        
                 <div class="">
                     <input type="radio" id="1star" name="rating" value="1"/>
@@ -33,3 +48,5 @@ function App() {
 
     );
 }
+
+export default App;
