@@ -53,12 +53,13 @@ function Landing() {
               <h5>PERSONAL PLANNER</h5>
               <p>
                 You have your own calendar in which you can plan out ahead of time and add the meals
-                you want to make.
+                you want to make, so that you don&apos;t have to worry as much yourself.
               </p>
               <br />
               <h5>CONVENIENT AND EASY TO USE</h5>
               <p>
-                It is simple and fast to search for recipes to add to the calendar.
+                It is simple to make small changes to the calendar whether adding new recipes to it,
+                or removing ones you don&apos;t quite feel like making anymore.
               </p>
             </div>
           </div>
@@ -82,6 +83,25 @@ function Landing() {
               <img src={temp3} alt="" width="500" height="300" />
             </div>
           </div>
+        </div>
+        <div>
+          <h3 style={{ fontSize: '30px', fontFamily: 'Copperplate, fantasy' }}>Who are we and why did we make this website?</h3>
+          <h5>MOTIVATION</h5>
+          <p>
+            People love food! And people also love convenience!
+          </p>
+          <p>
+            Our website combines those two to provide you with an easy way to
+          </p>
+          <p>
+            check out new recipes, view old ones, and plan and out
+            meals ahead.
+          </p>
+          <br />
+          <h5>THE PEOPLE</h5>
+          <p>
+            Ikenna Okonkwo&emsp;Cameron Golden&emsp;Brandon Duong&emsp;Astrid Dieguez&emsp;Taman Ho
+          </p>
         </div>
       </div>
     </div>
