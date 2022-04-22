@@ -14,7 +14,7 @@ function Login() {
 
   function verifyUser(user) {
     console.log('verifying.......');
-    const postUrl = '/landing';
+    const postUrl = '/login';
     const body = {};
     body.email = user.email;
     body.image_url = user.imageUrl;

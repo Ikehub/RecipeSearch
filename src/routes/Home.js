@@ -66,7 +66,7 @@ function Home() {
     );
   }
 
-  function favdiv(recipe) {
+  function favDiv(recipe) {
     return (
       <div id="favorites_div" className="">
         <h1 id="favorite_recipe_title" style={{ fontSize: '16px' }}>{recipe.title}</h1>
@@ -76,7 +76,7 @@ function Home() {
 
   useEffect(() => {
     setRecentlyViewed(recentlyViewedDefault.map(rvDiv));
-    setFavoriteRecipes(favoritesDefault.map(favdiv));
+    setFavoriteRecipes(favoritesDefault.map(favDiv));
   }, []);
 
   return (
