@@ -4,9 +4,9 @@ Module contains all routes functionality
 import json
 import requests
 import flask
-from models import db, User
+from models import db, User, Favorites
 
-# pylint: disable=missing-function-docstring, no-member, unused-argument
+# pylint: disable=missing-function-docstring, no-member, unused-argument, no-value-for-parameter
 
 routes = flask.Blueprint("routes", __name__)
 bp = flask.Blueprint(
@@ -91,3 +91,56 @@ def random():
     response = request.json()
 
     return flask.jsonify(response["meals"])
+
+
+@routes.route("/add", methods=["POST"])
+def add_meals():
+    data = json.loads(flask.request.data)
+    email = data["email"]
+    meal_id = data["idMeal"]
+    image = data["strMealThumb"]
+    instructions = data["strInstructions"][:500]
+    meal_name = data["strMeal"]
+
+    meals = Favorites(
+        email=email,
+        idMeal=meal_id,
+        strMealThumb=image,
+        strInstructions=instructions,
+        strMeal=meal_name,
+    )
+    db.session.add(meals)
+    db.session.commit()
+    return flask.jsonify({"msg": "success"})
+
+
+@routes.route("/delete", methods=["POST"])
+def delete_meals():
+    data = json.loads(flask.request.data)
+    email = data["email"]
+    meal_id = data["idMeal"]
+
+    Favorites.query.filter_by(email=email, idMeal=meal_id).delete()
+
+    db.session.commit()
+    return flask.jsonify({"msg": "success"})
+
+
+@routes.route("/is_favorites", methods=["POST"])
+def is_favorites():
+    data = json.loads(flask.request.data)
+    email = data["email"]
+    meal_id = data["idMeal"]
+    meal = Favorites.query.filter_by(email=email, idMeal=meal_id).first()
+    if meal:
+        return flask.jsonify({"is_favorites": True})
+
+    return flask.jsonify({"is_favorites": False})
+
+
+@routes.route("/get_all_meals", methods=["POST"])
+def get_all_meals():
+    data = json.loads(flask.request.data)
+    email = data["email"]
+    meals = Favorites.query.filter_by(email=email).all()
+    return flask.jsonify(meals)

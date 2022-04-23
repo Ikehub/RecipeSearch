@@ -22,6 +22,7 @@ function NavBar() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
+          <Nav.Link href="/favorites">Favorites</Nav.Link>
           <Nav.Link href="">Meal Prep Calendar</Nav.Link>
           {/* <NavDropdown title={name} id="basic-nav-dropdown">
             <NavDropdown.Item href="/reviews">All Reviews</NavDropdown.Item>

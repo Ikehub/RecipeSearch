@@ -12,20 +12,22 @@ import Landing from './routes/Landing';
 import ProtectedRoutes from './routes/ProtectedRoutes';
 import PublicRoutes from './routes/PublicRoutes';
 import Search from './routes/Search';
+import Favorites from './routes/Favorites';
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<PublicRoutes />}>
-          <Route path="/" element={<Landing />} />
-        </Route>
-
         <Route path="/" element={<ProtectedRoutes />}>
           <Route path="/" element={<Navigate replace to="home" />} />
           <Route path="home" element={<Home />} />
           <Route path="search" element={<Search />} />
+          <Route path="favorites" element={<Favorites />} />
           <Route path="meal/:id" element={<Meal />} />
+        </Route>
+
+        <Route path="landing" element={<PublicRoutes />}>
+          <Route path="/landing" element={<Landing />} />
         </Route>
       </Routes>
     </Router>

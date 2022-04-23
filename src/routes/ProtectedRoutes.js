@@ -8,7 +8,7 @@ function ProtectedRoutes() {
     <div>
       {loggedIn === 'true'
         ? <Outlet />
-        : <Navigate to="/" />}
+        : <Navigate to="/landing" />}
     </div>
   );
 }

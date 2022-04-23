@@ -39,6 +39,7 @@ function Login() {
     sessionStorage.setItem('loggedIn', true);
     sessionStorage.setItem('name', res.profileObj.name);
     sessionStorage.setItem('imageUrl', res.profileObj.imageUrl);
+    sessionStorage.setItem('email', res.profileObj.email);
 
     navigate('/home');
   };
