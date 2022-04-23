@@ -48,6 +48,8 @@ function Meal() {
     return (
       <MealCard
         meal={meal}
+        onDelete={null}
+        search={true}
       />
     );
   }
