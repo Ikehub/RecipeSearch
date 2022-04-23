@@ -2,7 +2,7 @@
 
 ## Heroku Link
 
-https://cherry-crumble-98629.herokuapp.com/
+https://meal-search.herokuapp.com/
 
 ## Linting
 * app.py
